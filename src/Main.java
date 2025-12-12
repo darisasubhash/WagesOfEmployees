@@ -26,6 +26,14 @@ public class Main {
 
         System.out.println(EmployeeWage.employeeWageCalculator());
 
+        System.out.println(("Enter the employess in affice"));
+        int empCount=scan.nextInt();
+        int totalWageofCompany=0;
+        while(empCount>0){
+             totalWageofCompany=totalWageofCompany+EmployeeWages.singleEmployeeWage(scan.nextInt(),scan.nextInt(),scan.nextInt());
+        }
+        System.out.println("Total Company Wages "+totalWageofCompany);
+
 
 
 
