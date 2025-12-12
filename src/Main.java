@@ -22,6 +22,8 @@ public class Main {
         System.out.println("Employee wage for one month is "+totalwage);
 
 
+        System.out.println("Employee wage calculate by the company"+(employeeWageByCompany("tcs",20,20,100)));
+
         System.out.println(EmployeeWage.employeeWageCalculator());
 
 
@@ -33,11 +35,11 @@ public class Main {
         int entry=scan.nextInt();
         switch(entry){
             case 1:employeeWage();
-            return;
+            break;
             case 2:System.out.println("Part time wage of an employee is "+partTimeWages);
-            return;
+            break;
             default:System.out.println("Enter either 1 or 2");
-            return;
+            break;
         }
 
 
@@ -84,5 +86,25 @@ public class Main {
 
         }
         return wages;
+    }
+    public static int employeeWageByCompany(String company,int wagePerHour,int workingDays,int workingHours){
+        int totalHours=0;
+        int totalDays=0;
+        while(totalDays <workingDays && totalHours<workingHours){
+            totalDays++;
+            int role=(int)Math.floor(Math.random()*3);
+            int workesHours=0;
+            switch(role){
+                case 1:workesHours=8;
+                break;
+                case 2:workesHours=6;
+                break;
+                default:workesHours=0;
+                break;
+            }
+            totalHours+=workesHours;
+        }
+        int totalWage=totalHours*wagePerHour;
+        return totalWage;
     }
 }
