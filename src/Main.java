@@ -1,11 +1,11 @@
 import java.util.Random;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+        Scanner scan=new Scanner(System.in);
         System.out.println("Hello and welcome to Employee Wage Management System");
         Random rand=new Random();
         boolean isPresent= rand.nextBoolean();
@@ -18,6 +18,17 @@ public class Main {
         employeeWage();
         int partTimeWages=partTimeWage();
         System.out.println("Part time wage of an employee is "+partTimeWages);
+        System.out.println("Enter 1/ Full day wage  2/ Part time wage");
+        int entry=scan.nextInt();
+        switch(entry){
+            case 1:employeeWage();
+            return;
+            case 2:System.out.println("Part time wage of an employee is "+partTimeWages);
+            return;
+            default:System.out.println("Enter either 1 or 2");
+            return;
+        }
+
 
     }
     public static void employeeWage(){
