@@ -1,27 +1,38 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompanyEmployeeWageImpl implements CompanyEmpWage {
 
-    private Map<String, EmployeeWageBuilder> companies;
+
+    private List<EmployeeWageBuilder> companies;
 
     public void CompanyEmpWageImpl() {
-        companies = new HashMap<String, EmployeeWageBuilder>();
+        companies = new ArrayList<>();
     }
 
     @Override
-    public EmployeeWageBuilder addCompany(String name, EmployeeWageBuilder empWageBuilder) {
-        companies.put(name, empWageBuilder);
+    public EmployeeWageBuilder addCompany(String name,EmployeeWageBuilder empWageBuilder) {
+        Employee.setName(name);
+        companies.add(empWageBuilder);
         return empWageBuilder;
     }
 
     @Override
     public EmployeeWageBuilder removeCompany(String name) {
-        return companies.remove(name);
+        EmployeeWageBuilder empWageBuilder = getCompany(name);
+        if(companies.remove(empWageBuilder))
+            return empWageBuilder;
+        else
+            return null;
     }
 
     @Override
     public EmployeeWageBuilder getCompany(String name) {
-        return companies.get(name);
+        for (EmployeeWageBuilder empWageBuilder : companies) {
+            if(Employee.getName().equalsIgnoreCase(name)){
+                return empWageBuilder;
+            }
+        }
+        return null;
     }
 }
