@@ -15,8 +15,12 @@ public class Main {
         else{
             System.out.println("Employee is Absent");
         }
+        employeeWage();
 
-
-
+    }
+    public static void employeeWage(){
+        int wagePerHour=20;
+        int fullDayHours=8;
+        System.out.println("Employee wage is "+wagePerHour*fullDayHours);
     }
 }
