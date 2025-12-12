@@ -20,6 +20,13 @@ public class Main {
         System.out.println("Part time wage of an employee is "+partTimeWages);
         int totalwage = monthlyWage();
         System.out.println("Employee wage for one month is "+totalwage);
+
+
+        System.out.println(EmployeeWage.employeeWageCalculator());
+
+
+
+
         int wageOnCondition=calculatingWageByCondition();
         System.out.println("Employee salary basing on condition is "+wageOnCondition);
         System.out.println("Enter 1/ Full day wage  2/ Part time wage");
