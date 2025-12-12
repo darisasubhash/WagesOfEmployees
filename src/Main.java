@@ -20,6 +20,8 @@ public class Main {
         System.out.println("Part time wage of an employee is "+partTimeWages);
         int totalwage = monthlyWage();
         System.out.println("Employee wage for one month is "+totalwage);
+        int wageOnCondition=calculatingWageByCondition();
+        System.out.println("Employee salary basing on condition is "+wageOnCondition);
         System.out.println("Enter 1/ Full day wage  2/ Part time wage");
         int entry=scan.nextInt();
         switch(entry){
@@ -49,5 +51,31 @@ public class Main {
         int wagePerHour=20;
         int fullDayHours=8;
         return workingDays*wagePerHour*fullDayHours;
+    }
+    public static int calculatingWageByCondition()
+    {
+        Scanner scan=new Scanner(System.in);
+        int wagePerHour=20;
+        System.out.println("Enter the hours you want to calculate ");
+        int hours=scan.nextInt();
+        System.out.println("Enter the days you want to calculate ");
+        int days=scan.nextInt();
+        int wages=0;
+        if(days<=20 || hours<=100){
+            if(days<=20){
+                wages=days*8*wagePerHour;
+            }
+            else{
+                wages=hours*wagePerHour;
+            }
+        }
+        else if(hours>100){
+            wages=100*wagePerHour;
+        }
+        else if (days>20) {
+            wages=20*8*wagePerHour;
+
+        }
+        return wages;
     }
 }
