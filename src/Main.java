@@ -18,6 +18,8 @@ public class Main {
         employeeWage();
         int partTimeWages=partTimeWage();
         System.out.println("Part time wage of an employee is "+partTimeWages);
+        int totalwage = monthlyWage();
+        System.out.println("Employee wage for one month is "+totalwage);
         System.out.println("Enter 1/ Full day wage  2/ Part time wage");
         int entry=scan.nextInt();
         switch(entry){
@@ -30,6 +32,7 @@ public class Main {
         }
 
 
+
     }
     public static void employeeWage(){
         int wagePerHour=20;
@@ -40,5 +43,11 @@ public class Main {
         int wagePerHour=20;
         int workHours=6;
         return wagePerHour*workHours;
+    }
+    public static int monthlyWage(){
+        int workingDays=20;
+        int wagePerHour=20;
+        int fullDayHours=8;
+        return workingDays*wagePerHour*fullDayHours;
     }
 }
