@@ -26,13 +26,24 @@ public class Main {
 
         System.out.println(EmployeeWage.employeeWageCalculator());
 
-        System.out.println(("Enter the employess in affice"));
-        int empCount=scan.nextInt();
-        int totalWageofCompany=0;
-        while(empCount>0){
-             totalWageofCompany=totalWageofCompany+EmployeeWages.singleEmployeeWage(scan.nextInt(),scan.nextInt(),scan.nextInt());
-        }
-        System.out.println("Total Company Wages "+totalWageofCompany);
+
+        EmployeeWageBuilder tcs =
+                new EmployeeWageBuilder("TCS", 20, 20, 100);
+
+        EmployeeWageBuilder infosys =
+                new EmployeeWageBuilder("Infosys", 25, 22, 110);
+
+        tcs.computeEmpWage();
+        infosys.computeEmpWage();
+
+        System.out.println(tcs.getCompany() +
+                " Total Wage: " + tcs.getTotalWage());
+
+        System.out.println(infosys.getCompany() +
+                " Total Wage: " + infosys.getTotalWage());
+
+
+
 
 
 
