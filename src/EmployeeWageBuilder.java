@@ -1,13 +1,13 @@
 public class EmployeeWageBuilder {
 
-    // Instance variables (company-specific)
+
     private String company;
     private int wagePerHour;
     private int maxWorkingDays;
     private int maxWorkingHours;
     private int totalWage;
 
-    // Constructor
+
     public EmployeeWageBuilder(String company, int wagePerHour,
                           int maxWorkingDays, int maxWorkingHours) {
         this.company = company;
@@ -16,7 +16,6 @@ public class EmployeeWageBuilder {
         this.maxWorkingHours = maxWorkingHours;
     }
 
-    // Compute wage and SAVE it in instance variable
     public void computeEmpWage() {
 
         int totalHours = 0;
@@ -31,23 +30,22 @@ public class EmployeeWageBuilder {
 
             switch (empType) {
                 case 1:
-                    workHours = 8; // Full-time
+                    workHours = 8;
                     break;
                 case 2:
-                    workHours = 6; // Part-time
+                    workHours = 6;
                     break;
                 default:
-                    workHours = 0; // Absent
+                    workHours = 0;
             }
 
             totalHours += workHours;
         }
 
-        // Save total wage
+
         totalWage = totalHours * wagePerHour;
     }
 
-    // Getter
     public int getTotalWage() {
         return totalWage;
     }
