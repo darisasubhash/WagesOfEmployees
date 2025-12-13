@@ -13,7 +13,7 @@ public class Employee {
         this.attendance = attendance;
     }
 
-    public static void setName(String name) {
+    public  void setName(String name) {
         this.name = name;
     }
 
@@ -25,7 +25,7 @@ public class Employee {
         this.attendance[day] = true;
     }
 
-    public static String getName() {
+    public  String getName() {
         return name;
     }
 

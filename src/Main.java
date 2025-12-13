@@ -95,7 +95,7 @@ public class Main {
         }
         return wages;
     }
-    public static int employeeWageByCompany(String company,int wagePerHour,int workingDays,int workingHours){
+    public static String employeeWageByCompany(String company,int wagePerHour,int workingDays,int workingHours){
         int totalHours=0;
         int totalDays=0;
         while(totalDays <workingDays && totalHours<workingHours){
@@ -113,6 +113,6 @@ public class Main {
             totalHours+=workesHours;
         }
         int totalWage=totalHours*wagePerHour;
-        return totalWage;
+        return company+" - "+totalWage;
     }
 }
