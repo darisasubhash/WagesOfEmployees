@@ -22,11 +22,15 @@ public class EmployeeWageBuilder {
     public int calculateTotalWage() {
         int totalWage = 0;
         int monthlyWage = 0;
-        for(Employee employee : employees) {
+        for (Employee employee : employees) {
             monthlyWage = employee.calculateMonthlyWage(wagePerHour, totalWorkingDaysPerMonth, totalWorkingHours);
             System.out.println("Employee Name : " + employee.getName() + " monthly wage : " + monthlyWage);
             totalWage += monthlyWage;
         }
         return totalWage;
     }
+
+
+
+
 }
