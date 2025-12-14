@@ -14,6 +14,10 @@ public class EmployeeWageBuilder
         this.maxWorkingHours = maxWorkingHours;
     }
 
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
     public void computeEmpWage() {
 
         int totalHours = 0;
@@ -51,4 +55,5 @@ public class EmployeeWageBuilder
     public String getCompany() {
         return company;
     }
+
 }

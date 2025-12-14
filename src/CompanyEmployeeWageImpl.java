@@ -10,12 +10,14 @@ public class CompanyEmployeeWageImpl implements CompanyEmpWage {
         companies = new ArrayList<>();
     }
 
+
     @Override
-    public EmployeeWageBuilder addCompany(String name,EmployeeWageBuilder empWageBuilder) {
-        Employee.setName(name);
+    public void addCompany(String name,EmployeeWageBuilder empWageBuilder) {
+        EmployeeWageBuilder ew=new EmployeeWageBuilder("TCS", 20,20,20);
+        ew.setCompany(name);
         companies.add(empWageBuilder);
-        return empWageBuilder;
     }
+
 
     @Override
     public EmployeeWageBuilder removeCompany(String name) {
@@ -29,7 +31,7 @@ public class CompanyEmployeeWageImpl implements CompanyEmpWage {
     @Override
     public EmployeeWageBuilder getCompany(String name) {
         for (EmployeeWageBuilder empWageBuilder : companies) {
-            if(Employee.getName().equalsIgnoreCase(name)){
+            if(empWageBuilder.getCompany().equalsIgnoreCase(name)){
                 return empWageBuilder;
             }
         }

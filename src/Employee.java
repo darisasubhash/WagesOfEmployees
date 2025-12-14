@@ -4,6 +4,7 @@ public class Employee {
     private int[] workingHours;
 
 
+
     public Employee(){
         attendance = new boolean[31];
         workingHours = new int[31];
