@@ -61,7 +61,13 @@ public class Main {
             break;
         }
 
+        EmployeeWageMultiCompany.EmpWageBuilder builder = new EmployeeWageMultiCompany.EmpWageBuilder(5);
 
+        builder.addCompany("TCS", 20, 20, 100);
+        builder.addCompany("Infosys", 25, 22, 110);
+        builder.addCompany("Wipro", 18, 20, 90);
+
+        builder.computeEmpWages();
 
     }
     public static void employeeWage(){
